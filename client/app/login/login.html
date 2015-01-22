@@ -1,0 +1,39 @@
+<form name="register" class="form-signup" novalidate="" ng-submit="signup()">
+  <h1 class="form-signin-heading text-muted">Register</h1>
+  <input type="email"
+        class="form-control"
+        placeholder="Email address"
+        required="" autofocus=""
+        ng-model="user.email"
+        name="email"/>
+    <p class="help-block"
+        ng-show="register.email.$dirty && register.email.$invalid">Please enter a valid email</p>
+
+  <input type="text"
+         class="form-control"
+         placeholder="Name"
+         required="" autofocus=""
+         ng-model="user.name" name="username">
+  <input type="password"
+         class="form-control"
+         placeholder="Password"
+         required=""
+         ng-model="user.password">
+  <input type="password"
+         class="form-control"
+         placeholder="Confirm Password"
+         required=""
+         ng-model="user.password_confirm" name="password_confirm">
+  <p class="help-block"
+     ng-show="user.password != user.password_confirm">
+    please match the password
+  </p>
+
+  <button class="btn btn-lg btn-primary btn-block"
+          type="submit"
+          ng-disabled="register.$invalid">
+    Submit
+  </button>
+</form>
+
+{{user}}
